@@ -1,0 +1,15 @@
+Domain,Controller,Method,URL,Parameter,Body(json),Comment,Role
+Book,BookController,POST,/books,,"id, isbn, title, author, introduce, tags",도서 추가,ROLE_MANAGER
+Book,BookController,GET,/books,,,전체 도서 조회,ROLE_USER
+Book,BookController,GET,/books/search,searchKeyword,,도서 검색,ROLE_USER
+Book,BookController,GET,/books/{bookId},,,도서 조회,ROLE_USER
+Book,BookController,PUT,/books/{bookId},,"isbn, title, author, introduce, tags",도서 수정,ROLE_MANAGER
+Book,BookController,DELETE,/books/{bookId},,,도서 삭제,ROLE_MANAGER
+BookCategory,BookCategoryController,POST,/categories,,"id, categoryName",카테고리 추가,ROLE_MANAGER
+BookCategory,BookCategoryController,GET,/categories,,,전체 카테고리 조회,ROLE_USER
+BookCategory,BookCategoryController,GET,/categories/{categoryId},,,카테고리 조회,ROLE_USER
+BookCategory,BookCategoryController,PUT,/categories/{categoryId},,,카테고리 수정,ROLE_MANAGER
+BookCategory,BookCategoryController,DELETE,/categories/{categoryId},,,카테고리 삭제,ROLE_MANAGER
+BookCategory,BookCategoryController,POST,/categories/{categoryId}/books,,bookId,카테고리에 책 추가,ROLE_MANAGER
+BookCategory,BookCategoryController,GET,/categories/{categoryId}/books,,,카테고리의 책 조회,ROLE_USER
+BookCategory,BookCategoryController,DELETE,/categories/{categoryId}/books/{bookId},,,카테고리의 책 제외,ROLE_MANAGER
